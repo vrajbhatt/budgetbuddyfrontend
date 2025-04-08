@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 export const ReportDashboard = () => {
     const [reports, setReports] = useState([]);
   const navigate = useNavigate();
-  const userId = "USER_ID_HERE"; // Replace with actual user ID
+  const userId = localStorage.getItem("id");
 
   useEffect(() => {
     fetchReports();
@@ -16,7 +16,9 @@ export const ReportDashboard = () => {
 
   const fetchReports = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/reports", { params: { userId } });
+      const res = await axios.get("http://localhost:3000/reports");
+      console.log(res.data.data);
+      console.log(userId)
       setReports(res.data.data || []);
     } catch (error) {
       console.error("Error fetching reports:", error);

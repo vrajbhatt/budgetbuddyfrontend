@@ -53,7 +53,6 @@ function App() {
       <div className={location.pathname === "/login" || location.pathname === "/signup" ? "" : "app-wrapper"}>
         <Routes>
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/admindashboard" element={<AdminDashboard />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/" element={<LandingPage />}></Route>
           <Route path="" element={<PrivateRoutes />}>
@@ -80,6 +79,7 @@ function App() {
               <Route path="updatefinancialgoal/:id" element={<UpdateFinancialGoal />}></Route>
               <Route path="reportdashboard" element={<ReportDashboard />}></Route>
               <Route path="notificationdashboard" element={<NotificationDashboard />}></Route>
+              <Route path="admindashboard" element={<AdminDashboard />}></Route>
             </Route>
           </Route>
 
